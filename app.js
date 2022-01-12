@@ -14,4 +14,4 @@ connectDB();
 
 //including routed folder
 
-app.use('/',require('../users/routes/index'))
+app.use('',require('../users/routes/index'))

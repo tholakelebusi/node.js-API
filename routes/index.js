@@ -23,7 +23,7 @@ router.get('/users', (req, res)=>
 
 
 
-router.post('/user', (req, res)=>
+router.post('/users', (req, res)=>
 {
     const user=new Users(
         {
