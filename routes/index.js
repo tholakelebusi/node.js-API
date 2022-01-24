@@ -53,6 +53,31 @@ router.get('/users/:id', (req, res)=>
 });
 
 
+//edit
+router.put('/users/:id', (req, res) => 
+{
+Users.findOneAndUpdate(req.params.id)
+    .then(result => {
+        message: req.body.message
+       res.json('Success')
+     },
+      { new: true })
+    
+    .catch(error => console.error(error))
+    });
 
+
+    //deleting
+router.delete('/users/:id', (req, res) => 
+{
+Users.findByIdAndRemove(req.params.id)
+    .then(result => {
+   
+
+            res.status(200).json({code:200,message:"users Deleted succesfuly"})
+       res.json('Success')
+     })
+    .catch(error => console.error(error))
+    });
 
 module.exports=router;
