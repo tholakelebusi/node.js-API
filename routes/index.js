@@ -23,21 +23,6 @@ router.get('/users', (req, res)=>
 
 
 
-router.post('/users', (req, res)=>
-{
-    const user=new Users(
-        {
-            name:req.body.name,
-            surname:req.body.surname,
-            email:req.body.email
-        }
-    );
-    user.save((err,data)=>
-    {
-        res.status(200).json({code:200,message:"users added succesfuly",addUsers:data})
-    });
-});
-
 router.get('/users/:id', (req, res)=>
 {
     Users.findById(req.params.id,(err,data)=>
