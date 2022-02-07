@@ -80,4 +80,36 @@ Users.findByIdAndRemove(req.params.id)
     .catch(error => console.error(error))
     });
 
+    // router.put('/stations/:id', async(req, res)=>{
+    //     try{
+    //        const id = req.body._id;
+    //        const details= await Stations.findOneAndUpdate({id:req.body._id},   
+    //         {"$set": {   
+    //        name: req.body.name,
+    //        idNumber:req.body.idNumber,
+    //        streamlink:req.body.streamlink,
+    //        favourite:req.body.favourite,
+    //        image: req.body. image
+    //     }} )
+    
+    //     if(!details){
+    //        return res.status(200).send({
+    //          status: 404,
+    //          message: 'No data find'
+    //        })
+    //     }
+    //     res.status(200).send({
+    //        status: 200,
+    //        message: 'Data Update Successfully'
+    //     })
+    //     }
+    //     catch(error){
+    //        console.log(error)
+    //        return res.status(400).send({
+    //          message:'Unable to update data',
+    //          errors: error,
+    //          status: 400
+    //        })
+    //     }
+    //     });
 module.exports=router;
