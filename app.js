@@ -5,7 +5,6 @@ const app = express();
 app.use(bodyParser.json());
 
 
-
 var cors = require('cors')
 app.use(cors())
 app.listen(3000);
@@ -19,6 +18,7 @@ connectDB();
 
 app.use('',require('../users/routes/index'))
 app.use('',require('../users/stations/routes/index'));
+
 
 
 

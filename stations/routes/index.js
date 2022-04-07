@@ -5,6 +5,9 @@ const bodyParser=require('body-parser');
 const {Stations}=require('../models/station');
 const { resourceLimits } = require('worker_threads');
 
+const multerConfig = require("../uploads/upload");
+
+
 //get everything
 router.get('/stations', (req, res)=>
 {
@@ -126,4 +129,16 @@ router.delete('/stations/:id', (req, res) =>
         }
     });
 });
+
+
+router.post('/test', multerConfig.saveToUploads, (req, res) => {
+    return res.json("file uploaded successfully");
+});
+
+
+
+
+
+
+
 module.exports=router;
